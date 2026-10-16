@@ -1,0 +1,36 @@
+
+---
+- name: Configure and deploy a sample website
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Install Nginx web server
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+        update_cache: true
+
+    - name: Create website homepage
+      ansible.builtin.copy:
+        dest: /var/www/html/index.html
+        content: |
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>DevOps Ansible Project</title>
+          </head>
+          <body>
+            <h1>Deployment Successful!</h1>
+            <p>This website is configured using Ansible.</p>
+          </body>
+          </html>
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Start and enable Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
