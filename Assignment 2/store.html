@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA | Modern Fashion & Essentials</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <p>✨ Free express shipping on all orders over $75 • Use code <strong>AURA20</strong> for 20% off</p>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <span class="logo-mark">A</span>
+        <span class="logo-text">AURA<span>.STUDIO</span></span>
+      </a>
+
+      <div class="search-box">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search shirts, sneakers, accessories...">
+      </div>
+
+      <nav class="nav-links">
+        <a href="#products" class="active">Shop</a>
+        <a href="#featured">Featured</a>
+        <a href="#about">Story</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="openCartBtn" aria-label="Open Shopping Cart">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-label">Cart</span>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero-section" id="featured">
+    <div class="hero-container">
+      <div class="hero-content">
+        <span class="hero-tag">Autumn / Winter 2026 Collection</span>
+        <h1>Curated Essentials For Mindful Living.</h1>
+        <p>Premium fabric, timeless cuts, and sustainable craftsmanship tailored for modern everyday wear.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">Explore Products</a>
+          <a href="#featured" class="btn btn-secondary">Lookbook</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong>100%</strong>
+            <span>Organic Cotton</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <strong>4.9 ★</strong>
+            <span>Customer Rating</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <strong>30 Days</strong>
+            <span>Easy Returns</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="hero.jpg" alt="AURA Collection Flatlay" class="hero-img" onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80'">
+        <div class="hero-floating-badge">
+          <div class="badge-icon">🏷️</div>
+          <div class="badge-text">
+            <span>Special Drop</span>
+            <strong>Up to 35% Off</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category & Filter Bar -->
+  <section class="store-section" id="products">
+    <div class="store-container">
+      <div class="section-header">
+        <div>
+          <h2>Discover Our Catalog</h2>
+          <p>Hand-picked wardrobe staples crafted to last through seasons.</p>
+        </div>
+        <div class="sort-wrapper">
+          <label for="sortSelect">Sort by:</label>
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Filter Chips -->
+      <div class="category-filters" id="categoryFilters">
+        <button class="filter-chip active" data-category="all">All Items</button>
+        <button class="filter-chip" data-category="clothing">Clothing</button>
+        <button class="filter-chip" data-category="footwear">Footwear</button>
+        <button class="filter-chip" data-category="accessories">Accessories</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Products populated via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Propositions / Highlights -->
+  <section class="features-bar">
+    <div class="features-container">
+      <div class="feature-box">
+        <div class="feature-icon">🚚</div>
+        <div class="feature-info">
+          <h4>Free Express Shipping</h4>
+          <p>On orders above $75 nationwide</p>
+        </div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">🛡️</div>
+        <div class="feature-info">
+          <h4>Secure Checkout</h4>
+          <p>256-bit encrypted transactions</p>
+        </div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">🔄</div>
+        <div class="feature-info">
+          <h4>30-Day Hassle-Free Returns</h4>
+          <p>Pre-paid return labels included</p>
+        </div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">🌿</div>
+        <div class="feature-info">
+          <h4>Ethically Made</h4>
+          <p>Carbon neutral supply chain</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Drawer Overlay -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your Bag (<span id="cartItemCount">0</span>)</h3>
+      <button class="close-cart-btn" id="closeCartBtn" aria-label="Close cart">&times;</button>
+    </div>
+
+    <!-- Free shipping progress bar -->
+    <div class="shipping-progress">
+      <p id="shippingProgressText">Add $75.00 more to unlock Free Shipping!</p>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="shippingBarFill" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <div class="cart-items" id="cartItemsContainer">
+      <!-- Items dynamically populated -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Estimated Tax (8%)</span>
+        <span id="cartTax">$0.00</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn btn-primary checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+      <p class="cart-footer-note">🔒 Guaranteed safe & secure checkout</p>
+    </div>
+  </aside>
+
+  <!-- Checkout Success Modal -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-card">
+      <div class="modal-icon">🎉</div>
+      <h3>Order Placed Successfully!</h3>
+      <p>Thank you for shopping with AURA.STUDIO. Your order confirmation has been sent to your email.</p>
+      <div class="order-id-badge">Order #AUR-2026-9482</div>
+      <button class="btn btn-primary" id="closeModalBtn">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="footer" id="about">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="brand-logo">
+          <span class="logo-mark">A</span>
+          <span class="logo-text">AURA<span>.STUDIO</span></span>
+        </a>
+        <p>Simple, functional and beautiful everyday clothing and lifestyle accessories designed to fit seamlessly into modern life.</p>
+      </div>
+
+      <div class="footer-column">
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="#products">New Arrivals</a></li>
+          <li><a href="#products">Best Sellers</a></li>
+          <li><a href="#products">Footwear</a></li>
+          <li><a href="#products">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h5>Customer Support</h5>
+        <ul>
+          <li><a href="#">Order Tracking</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h5>Stay in Touch</h5>
+        <p>Receive 10% off your first purchase and exclusive access to new drops.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to AURA newsletter!');">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit" class="btn btn-primary">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 AURA.STUDIO Inc. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

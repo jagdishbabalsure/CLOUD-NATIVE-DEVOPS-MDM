@@ -1,0 +1,64 @@
+# ============================================================
+# Kubernetes Deployment Configuration
+# Assignment: Containerization & Kubernetes Deployment
+# Application: Nginx Static Web Server
+# ============================================================
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-assignment-deployment
+  namespace: default
+  labels:
+    app: nginx-assignment
+    version: "1.0"
+    tier: frontend
+spec:
+  # 3 replicas for high availability demonstration
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-assignment
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0          # Zero-downtime rolling updates
+  template:
+    metadata:
+      labels:
+        app: nginx-assignment
+        version: "1.0"
+    spec:
+      containers:
+        - name: nginx-app
+          image: nginx-assignment:1.0   # locally built image
+          imagePullPolicy: Never        # use local image in Minikube
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          # Resource requests & limits (best practice)
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "128Mi"
+              cpu: "200m"
+          # Liveness probe — restart container if unhealthy
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 15
+            failureThreshold: 3
+          # Readiness probe — only route traffic when ready
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+      restartPolicy: Always

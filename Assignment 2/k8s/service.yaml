@@ -1,0 +1,23 @@
+# ============================================================
+# Kubernetes Service Configuration — NodePort
+# Assignment: Containerization & Kubernetes Deployment
+# ============================================================
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-assignment-service
+  namespace: default
+  labels:
+    app: nginx-assignment
+    tier: frontend
+spec:
+  type: NodePort          # Exposes app on a port of each Node's IP
+  selector:
+    app: nginx-assignment  # Must match Deployment's pod labels
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80             # Service port (cluster-internal)
+      targetPort: 80       # Container port
+      nodePort: 30080      # External port (accessible via minikube ip)
