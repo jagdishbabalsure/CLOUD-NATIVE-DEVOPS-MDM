@@ -1,15 +1,18 @@
 # Containerization & Kubernetes Deployment Challenge
 
+**Student:** Jagdish Babalsure  
+**Course:** Cloud Native Development (MDM) — Final Year  
+
 ## Project Structure
 
 ```
 Assignment 2/
 |-- Assignment2_Containerization_Kubernetes.docx  # Final submission document with screenshots & logs
-|-- Dockerfile                                   # Optimized Docker image definition
+|-- Dockerfile                                   # Optimized Docker image definition (Maintainer: Jagdish Babalsure)
 |-- deploy.ps1                                   # Automated one-click deployment script
-|-- index.html                                   # Assignment overview landing page
-|-- store.html                                   # Complete eCommerce fashion web app
-|-- style.css                                    # Design system & responsive styles
+|-- index.html                                   # Assignment overview landing page (Jagdish Babalsure)
+|-- store.html                                   # Complete eCommerce fashion web app (all-in-one standalone file)
+|-- style.css                                    # Modular design system & responsive styles
 |-- app.js                                       # eCommerce catalog, cart & checkout logic
 |-- hero.jpg                                     # Banner asset for store
 |-- nginx.conf                                   # Custom Nginx configuration (gzip, caching)
@@ -35,7 +38,8 @@ Assignment 2/
 
 Ensure your terminal (PowerShell) is open inside this directory:
 ```powershell
-cd "C:\Users\sagar\Desktop\Coding\CND (MDM) Final Year\Assignment 2"
+# Open terminal inside the assignment directory
+Set-Location -Path $PSScriptRoot  # or navigate to your Assignment 2 folder
 ```
 
 ### Option A - Automated One-Click Deployment (Recommended)

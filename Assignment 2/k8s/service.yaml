@@ -1,8 +1,3 @@
-# ============================================================
-# Kubernetes Service Configuration — NodePort
-# Assignment: Containerization & Kubernetes Deployment
-# ============================================================
-
 apiVersion: v1
 kind: Service
 metadata:

@@ -5,7 +5,7 @@
 
 FROM nginx:1.25-alpine
 
-LABEL maintainer="Sagar"
+LABEL maintainer="Jagdish Parthsarthi Babalsure"
 LABEL description="Containerized Nginx web application for Kubernetes assignment"
 LABEL version="1.0"
 
