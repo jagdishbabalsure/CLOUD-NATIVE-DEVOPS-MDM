@@ -31,14 +31,31 @@ pipeline {
                 }
             }
         }
+
+        stage('Build Docker Image') {
+            steps {
+                dir('Activity 3') {
+                    sh 'docker build -t taskflow-app:latest .'
+                }
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                sh '''
+                    docker rm -f taskflow-app 2>/dev/null || true
+                    docker run -d --name taskflow-app -p 8082:80 taskflow-app:latest
+                '''
+            }
+        }
     }
 
     post {
         success {
-            echo 'SUCCESS: TaskFlow built successfully!'
+            echo 'SUCCESS: TaskFlow built and deployed!'
         }
         failure {
-            echo 'FAILED: Check the Jenkins console output.'
+            echo 'FAILED: Check the Jenkins Console Output.'
         }
     }
 }
